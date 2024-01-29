@@ -1,9 +1,9 @@
-name: deploy
+name: deploy-vm
 on: [push]
 jobs:
 
   build:
-    name: Build
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -13,5 +13,5 @@ jobs:
         host: 34.42.75.139
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        source: "index.html"
+        source: "./index.html"
         target: "/var/www/html"
